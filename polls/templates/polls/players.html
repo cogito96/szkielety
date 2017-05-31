@@ -1,0 +1,28 @@
+{% extends "polls/base.html" %}
+
+{% block head %}players{% endblock %}
+
+{% block center_side %}
+<table border="1" align="center">
+    {% for t in teams %}
+        <tr>
+            <td colspan="3">Zespół: {{t.nazwa_klubu}}&nbsp; </td><br/>
+        </tr>
+        <tr>
+            <td>&nbsp; Imie i nazwisko<br/></td>
+            <td>&nbsp; Pozycja<br/></td>
+            <td>&nbsp; Data urodzenia&nbsp;<br/></td>
+        </tr>
+        {% for p in players %}
+            {% if p.zespol.nazwa_klubu in t.nazwa_klubu %}
+        <tr>
+            <td>&nbsp; &nbsp; {{p.imie}} {{p.nazwisko}} &nbsp;</br></td>
+            <td>&nbsp; &nbsp; {{p.pozycja}}&nbsp;</br></td>
+            <td>&nbsp; &nbsp; {{p.data_urodzenia}}&nbsp;</br></td>
+        </tr>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</table>
+{% endblock center_side %}
+

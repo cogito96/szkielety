@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block head %}{% endblock %}</title>
+    <script type="{% static '/javascript" src="clock.js"></script>
+</head>
+
+<body marginheight="0" marginwidth="0" >
+    <div id="contener" style="position: absolute;height:100%;width:100%;">
+        <div class="left_side" style="background-color: #d3d3d3;height:100%;width:25%;float:left;">
+            {% block left_side %}
+            <h1 style="Margin:10px;">
+                Menu:
+            </h1>
+            <a href="http://localhost:8000/polls/home/" style="font-size:25px;Margin:20px;">
+                Strona główna
+            </a>
+            </br>
+            <a href="http://127.0.0.1:8000/polls/teams/" style="font-size:25px;Margin:20px;">
+                Lista zespołów
+            </a>
+            <br/>
+            <a href="http://127.0.0.1:8000/polls/match/" style="font-size:25px;Margin:20px;">
+                Lista mecze
+            </a>
+            <br/>
+            <a href="http://127.0.0.1:8000/polls/players/" style="font-size:25px;Margin:20px;">
+                 Lista zawodnikow
+            </a>
+            <br/>
+            <a href="http://127.0.0.1:8000/polls/table/" style="font-size:25px;Margin:20px;">
+                 Aktualna tabela
+            </a>
+            <br/>
+            <a href="http://localhost:8000/polls/action/" style="font-size:25px;Margin:20px;">
+                 Statystyki meczów
+            </a>
+             <br/>
+            <a href="http://localhost:8000/polls/statistic/" style="font-size:25px;Margin:20px;">
+                 Ogólne statystyki z meczu
+            </a>
+             <br/>
+            <a href="http://localhost:8000/polls/results/" style="font-size:25px;Margin:20px;">
+                 Statystyki zawodników
+            </a>
+            {% endblock %}
+        </div>
+        <div class="center_side" style=";height:100%;width:50%;overflow: auto;float:left;">
+          <a href="http://www.carlsberg.pl/pl/" target="_blank">
+             <img src="https://images3.alphacoders.com/277/277225.jpg" style="width:95%;height:230px;Margin:9px; margin-bottom:0px;"/>
+          </a>
+            <h3>
+              {%block center_side %}
+                  Tekst glowny
+              {%endblock center_side %}
+            </h3>
+
+        </div>
+
+        <div class="left_side" style="background-color: #d3d3d3;width: 25%;height: 100%;float: left;" >
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
